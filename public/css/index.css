@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+*{
+    padding:0;
+    margin: 0;
+}
+body
+{
+    overflow-x:hidden;
+    width:100%;
+    background-image: url("../images/bg.jpg");
+    font: 15px "Montserrat", "Century Gothic", "Times Roman", sans-serif;
+    min-height:550px;
+    background-attachment:fixed;
+}
+
+.logo img
+{
+    width:150px;
+    padding-top: 5px;
+    height: auto;
+}
+
+/*.bg1*/
+/*{*/
+/*background:url(../image/bg.jpg);*/
+/*background-repeat: no-repeat;*/
+/*background-size: cover;*/
+/*}*/
+
+
+.panel{
+    border-color:#eee;
+    margin:40px;
+    padding:20px;
+    font: 15px "Century Gothic", "Times Roman", sans-serif;
+}
+
+.logo
+{
+
+    font-family:'typo';
+    font-size:35px;
+    color:#ffbb33;
+    margin-left: 50px;
+}
+
+
+.footer
+{
+    font-size:15px;
+    text-align:center;
+    border-top:1px solid;
+    border-color:#323232;
+    background-color:#202020;
+}
+.footer a
+{
+    margin:25px;
+    color:orange;
+    text-decoration:none;
+    font: 15px "Century Gothic", "Times Roman", sans-serif;
+
+}
+.footer a:hover
+{
+    text-decoration:none;
+    color:#9acd32;
+    border-top:2px solid;
+    border-color:orange;
+
+}
+
+.box
+{
+    padding:9px;
+}
+hr{
+    color:#000000;
+}
+.top
+{
+    margin-top:20px;
+}
+
+
+.but-one
+{
+    padding-top: 10px;
+}
+
+/*---------------------------------------------------*/
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background:#202020;
+    height: 50px;
+}
+
+.row {
+    width: 100%;
+    padding: 5px 0px;;
+    display: flex;
+    justify-content:space-between;
+
+}
+
+
+.but-one {
+
+    background: orange;
+    font-size: 15px;
+    height: 35px;
+    margin: 0px 30px;
+    width: 100px;
+    text-decoration: none;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.logo {
+    font-family:'typo';
+    font-size:35px;
+    color:#ffbb33;
+    margin-left: 50px;
+}
+
+
+.title
+{
+    font-family:'typo';
+}
+
+.col-lg-6
+{
+    padding:0;
+    margin-right: 15px;
+    direction: rtl;
+}
+.col-md-2
+{
+    padding-top: 35px;
+}
+
+.model-title
+{
+
+    padding: 10px ;
+    text-align: center;
+
+}
+
+.model-title-heading
+{
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+}
+
+
+.input-form-group
+{
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+}
+
+/* --------------------------------------------------------------------------------------*/
+
+
+.modal-header {
+    direction: rtl;
+    border-bottom: 2px solid rgba(1, 0, 0 ,0.1);
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+    /* margin-top:120px; */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+}
+
+
+.modal-body {
+    position: relative;
+    padding: 30px 150px;
+    direction: rtl;
+
+}
+
+
+.modal {
+    display: none; /* پنهان بودن به صورت پیش‌فرض */
+    position: fixed; /* ثابت بودن در جای خود */
+    z-index: 1; /* قرار گرفتن در بالاترین لایه */
+    left: 0;
+    top: 0;
+    width: 100%; /* عرض کامل */
+    height: 100%; /* ارتفاع کامل */
+    overflow: auto; /* اگر لازم باشد اسکرول اضافه شود */
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* استایل محتوای مودال */
+.modal-content {
+    direction: rtl;
+    margin: 2% auto;
+    border: 1px solid #888;
+    width: 40%;
+    background-color: rgb(2555,255,255);
+    border-radius: 15px;
+
+}
+.form-group
+{
+    display: flex;
+}
+
+.form-control
+{
+    width: 250px;
+    height: 26px;
+    border: 2px solid rgba(0,0,0,0.2);
+    padding-left: 2px;
+    margin-right: 8px;
+    border-radius: 6px;
+}
+.col-md-6
+{
+    padding-top: 20px;
+}
+.input-group
+{
+    display: flex;
+    align-items: center;
+    border-color: #f5f5f5;
+    direction: rtl;
+}
+.model-btn-heading
+{
+    border-top: 2px solid rgba(0,0,0,0.2);
+    color: #333;
+    background-color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.model-btn
+{
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+
+.btn {
+    margin-right: 255px;
+    background-color: #fbfbfb;
+    color: black;
+    padding: 1px 26px 7px 24px;
+    border: 2px solid rgba(0,0,0,0.2);
+    border-radius: 5px;
+    font-size: 16px;
+    position: relative;
+    text-align: center;
+
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px;
+    border-top: 2px solid #333;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+
+.btn:hover
+{
+    background-color: orange; /* رنگ پس‌زمینه تیره‌تر هنگام hover */
+    color: white; /* رنگ متن سفید هنگام hover */
+}
+
+.btn:active {
+
+    transform: translateY(2px); /* حرکت دکمه به سمت پایین */
+}
+
+
+.main-signup
+{
+    padding: 30px;
+    background-color: white;
+    margin: 50px;
+    border-radius: 10px;
+    width: 30%;
+    direction: rtl;
+}
+.input-signup
+{
+    border: 2px solid rgba(0,0,0,0.2);
+    width: 290%;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.input-signup-gender
+{
+    border: 2px solid rgba(0,0,0,0.2);
+    width: 450px;
+    height: 30px;
+    border-radius: 5px;
+}
+.signup-btn
+{
+    padding: 25px 60px  0px 0px;
+}
+
+.button-signup
+{
+    background-color: #07ccc312 #9739db;
+    width: 350px;;
+    height: 30px;
+    border-radius: 5px;
+    border-color: whitesmoke;
+    padding-right: 10px;
+
+}
+
+.button-signup:hover
+{
+    color:red ;
+}
+
+
+
