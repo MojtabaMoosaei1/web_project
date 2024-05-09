@@ -13,9 +13,6 @@ Route::get('/test', function () {
 });
 
 
-//میدل ور هارو بهتر درک کنی
-//قالب قسمت ساخت کوویز
-
 
 Route::post('/register', [AuthController::class, 'register']);
 
