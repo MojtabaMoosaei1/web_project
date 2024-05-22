@@ -27,6 +27,8 @@ Route::prefix('/Panel')->group(function () {
 
 Route::get('/Dashboard', [DashboardController::class , 'index'])->name('Dashboard')->middleware(EnsureUserIsLoggedIn::class);
 Route::get('Dashboard/user', [DashboardController::class , 'user'])->name('Dashboard.user')->middleware(EnsureUserIsLoggedIn::class);
+Route::get('Dashboard/create', [DashboardController::class , 'create'])->name('Dashboard.create')->middleware(EnsureUserIsLoggedIn::class);
+Route::post('Dashboard/store', [DashboardController::class, 'store'])->middleware(EnsureUserIsLoggedIn::class);;
 
 
 
@@ -39,4 +41,10 @@ Route::get('/home', [UserController::class , 'index'])->name('home');
 
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware(EnsureUserIsLoggedIn::class);
+
+
+// Route::get('Dashboard/create', function () {
+//     return view('admin.quize');
+// });
+
 

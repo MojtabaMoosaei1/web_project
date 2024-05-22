@@ -1,7 +1,7 @@
 
 <div id="HomeTable" class='table-home' style="background-color: #eeeeee;" >
     <div class="panel">
-        <table class=" table-striped ">
+        <table class=" table-panel">
             <tr style="color: #333333;">
                 <th>ردیف </th>
                 <th>موضوع</th>
@@ -10,7 +10,7 @@
                 <th>زمان پاسخگویی</th>
                 <th></th>
             </tr>
-            <tr class="table-tr">
+            <tr class="table-panel-tr">
                 <td>1</td>
                 <td>تست</td>
                 <td>3</td>
@@ -22,7 +22,7 @@
                     </a>
                 </td>
             </tr>
-            <tr class="table-tr">
+            <tr class="table-panel-tr">
                 <td>2</td>
                 <td>تست</td>
                 <td>10</td>

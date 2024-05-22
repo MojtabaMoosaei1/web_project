@@ -1,7 +1,7 @@
 
 <div id="UserTable" class='table-home' style="background-color: #eeeeee;" >
     <div class="panel">
-        <table class=" table-striped ">
+        <table class=" table-panel ">
 
             <tr style="color: #760707;">
                 <th></th>
@@ -12,19 +12,19 @@
                 <th>شماره موبایل</th>
                 <th></th>
             </tr>
-
-
-                <tr class="table-tr">
+            
+            @foreach ($users as $user )
+                <tr class="table-panel-tr">
                     <td></td>
                     <td></td>
-                    <td>1</td>
-                    <td>نام کاربر تست یک</td>
-                    <td>Email@gmail.com</td>
-                    <td>091511111111</td>
+                    <td>{{$user->id}}</td>
+                    <td>{{$user->name}} </td>
+                    <td>{{$user->email}}</td>
+                    <td>{{$user->phone_number}}</td>
                     <td></td>
                 </tr>
 
-
+                @endforeach
 
         </table>
     </div>

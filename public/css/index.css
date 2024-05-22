@@ -11,6 +11,8 @@ body
     font: 15px "Montserrat", "Century Gothic", "Times Roman", sans-serif;
     min-height:550px;
     background-attachment:fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 .logo img

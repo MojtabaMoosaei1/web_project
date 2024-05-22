@@ -2,8 +2,7 @@
 
 <div id="HomeTable" class='table-home' style="background-color: #eeeeee;" >
     <div class="panel">
-        <table class=" table-striped ">
-
+        <table class=" table-panel">
             <tr style="color: #333333;">
                 <th>ردیف </th>
                 <th>موضوع</th>
@@ -12,19 +11,25 @@
                 <th>زمان پاسخگویی</th>
                 <th></th>
             </tr>
-            <tr class="table-tr">
-                <td>1</td>
-                <td>موضوع تست یک</td>
-                <td>10</td>
-                <td>20</td>
-                <td>10دقیقه</td>
+            @foreach ($quizzes  as $quize)
+
+
+            <tr class="table-panel-tr">
+                <td>{{ $quize->id}}</td>
+                <td>{{ $quize->title}}</td>
+                <td>{{ $quize->question_count}}</td>
+                <td>{{ $quize->score}}</td>
+                <td>{{ $quize->time_limit}}</td>
                 <td>
                     <a href="https://google.com" class="start-btn" >
-                        <i class="fa fa-external-link"></i>  شروع
+                        <i class="fa fa-external-link"></i> ویرایش
+                    </a>
+                    <a href="https://google.com" class="start-btn" >
+                        <i class="fa fa-external-link"></i> حذف
                     </a>
                 </td>
             </tr>
-
+            @endforeach
 
 
         </table>
