@@ -1,4 +1,4 @@
-@extends('admin.layouts.master_page' )
+@extends('admin.layouts.master_page')
 
 
 @section('content')

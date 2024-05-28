@@ -1,7 +1,7 @@
 
 <div id="RankTable" class='table-home' style="background-color: #eeeeee;" >
     <div class="panel">
-        <table class=" table-striped ">
+        <table class=" table-panel ">
             <tr style="color: #760707;">
                 <th></th>
                 <th></th>
@@ -13,7 +13,7 @@
 
 
             </tr>
-            <tr class="table-tr">
+            <tr class="table-panel-tr">
                 <td></td>
                 <td></td>
                 <td>1</td>
@@ -23,7 +23,7 @@
                 <td></td>
 
             </tr>
-            <tr class="table-tr">
+            <tr class="table-panel-tr">
                 <td></td>
                 <td></td>
                 <td>2</td>

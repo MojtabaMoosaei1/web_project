@@ -13,6 +13,7 @@ class AuthController extends Controller
 {
     public function register(Request $request)
     {
+        // dd($request->all());
         $validatedData = request()->validate([
             'name' => 'required|max:150',
             'email' => 'required|email|unique:users,email',
@@ -32,7 +33,8 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $credentials = $request->only('email', 'password');
+
+        $credentials = request()->only('email', 'password');
 //        dd(Auth::guard('admin')->attempt($credentials));
         if (Auth::guard('admin')->attempt($credentials))
         {
@@ -59,12 +61,11 @@ class AuthController extends Controller
 
     public function logout()
     {
-        if(Auth::guard('admin')->check())
-        {
-            Auth::guard('admin')->logout();
-        }
-        Auth::guard('web')->logout();
 
+        if(Auth::check())
+        {
+            Auth::logout();
+        }
         return redirect()->route('home');
 
     }

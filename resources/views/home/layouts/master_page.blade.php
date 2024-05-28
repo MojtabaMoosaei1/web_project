@@ -26,8 +26,7 @@
 
 @yield('content')
 
-
-<div class="row footer" style="margin-top:210px ;">
+<div class="row footer" style="margin-top: 16% ;">
     <div class="box">
         <a href="https://google.com" target="_blank"> درباره ما <i class="fa fa-user-circle" aria-hidden="true"></i> </a>
     </div>

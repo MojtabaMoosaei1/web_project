@@ -3,7 +3,7 @@
 
 @section('content')
 
-    @include('admin.particles.user_table')
+    @include('admin.particles.user_table' , compact('users'))
 
 @endsection
 
