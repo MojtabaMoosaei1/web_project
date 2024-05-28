@@ -9,19 +9,17 @@
 </head>
 <body >
 
-<div class="header">
-    <div class="header">
-        <div class="row">
-            <div class="col-lg-6">
+<div class="header-main">
+    <div class="column">
                 <span class="logo">
                     <img src="{{asset('images/logo.png')}}" alt="لگوی سایت"  >
                 </span>
                 <span class="header-name-account">
                         <i class="fas fa-user" style="color: orange; padding-right: 60rem;"></i>
-                        <span class="pull-title1" >سلام :کاربر تست </span>
-                        <span class="pull-sign-out-title">
+                        <span class="hello-account" >سلام :کاربر تست </span>
+                        <span class="sign-out">
                             <i class="fas fa-sign-out-alt"></i>
-                            <a href="{{route('logout')}}" class="log">خروج</a>
+                            <a href="{{route('logout')}}" class="logout">خروج</a>
                         </span>
                     </span>
             </div>
@@ -32,9 +30,9 @@
 
 
 
-<div class="navbar-collapse" id="example-navbar-collapse">
-    <ul class="navbar-nav">
-        <li class="active" >
+<div class="navbar" id="example-navbar-collapse">
+    <ul class="navbar-list">
+        <li class="" >
             <a  href="{{ url('/Panel') }}" >
                 <i class="fas fa-home"></i>صفحه اصلی
             </a>

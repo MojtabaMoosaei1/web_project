@@ -13,7 +13,7 @@
             <form class="form-model" action="{{ url('login') }}" method="post">
                 @csrf
                 <div class="form-group">
-                    <label for="email"></label>
+                    <label for="karbariname"></label>
                     <div class="col-md-6">
                         <div class="input-group">
                             <i class="fas fa-user-graduate" aria-hidden="true"></i>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="model-btn">
-                    <button type="submit" class="btn" id="loginButton" >ورود</button>
+                    <button type="submit" class="btn" id="loginButton1" >ورود</button>
                 </div>
             </form>
         </div>
