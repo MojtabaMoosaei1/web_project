@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use App\Models\Truefalsequestion;
 use App\Models\Multiplequestion;
+use App\Models\Descriptivequestion;
 use App\Models\Quiz;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -98,7 +99,37 @@ class DashboardController extends Controller
                 ]);
             }
         }
+        else
+        {
+            // dd($request);
+            $data = request()->validate([
+                'title' => 'required|max:150|regex:/^[آ-یa-zA-Z\s]+[0-9]*$/u',
+                'count' => 'required|numeric|max:200',
+                'min' => 'required|min:1|max:240|numeric',
+                'score' => 'required|min:1|string',
+                'type_quize' => 'required|in:multipleChoice,trueFalse,descriptive',
+                'questions.*.text' => 'required|regex:/^[آ-یa-zA-Z\s?؟]+[0-9]*$/um',
+            ]);
+            $quize = Quiz::create([
+                'title' => $data['title'],
+                'question_count' => $data['count'],
+                'score' => $data['score'],
+                'time_limit' => $data['min'],
+                'type'=>$data['type_quize'],
+            ]);
 
+            foreach($data['questions'] as $questionData)
+            {
+                Descriptivequestion::create([
+                    'quize_id' => $quize->id,
+                    'title_questions' => $questionData['text'],
+                    'type'=>$data['type_quize'],
+                    'questions.*.text' => 'required|regex:/^[آ-یa-zA-Z\s?؟]+[0-9]*$/um',
+
+                ]);
+            }
+
+        }
        return redirect()->route('Dashboard');
     }
 
@@ -114,10 +145,15 @@ class DashboardController extends Controller
                 $id_multiplechoice =Multiplequestion::where('quize_id' ,$request->input('quiz_id'));
                 $id_multiplechoice->delete();
             }
-            if( $type_quize == "trueFalse")
+            elseif( $type_quize == "trueFalse")
             {
                 $id_truefalse = Truefalsequestion::where('quize_id' ,$request->input('quiz_id') );
                 $id_truefalse->delete();
+            }
+            else
+            {
+                $id_discript = Descriptivequestion::where('quize_id' ,$request->input('quiz_id') );
+                $id_discript->delete();
             }
             $id_quize = Quiz::where('id' ,$request->input('quiz_id') );;
             $id_quize->delete();
