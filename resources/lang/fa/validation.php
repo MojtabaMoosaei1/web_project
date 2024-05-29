@@ -138,6 +138,7 @@ return [
         'email' => 'ایمیل',
         'password' => 'پسورد',
         'phone_number'=>'شماره تلفن',
+        'questions.*.text' => 'متن سوال '
     ],
 
 ];

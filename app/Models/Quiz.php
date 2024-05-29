@@ -13,6 +13,7 @@ class Quiz extends Model
         'title',
         'question_count',
         'score',
-        'time_limit'
+        'time_limit',
+        'type'
     ];
 }

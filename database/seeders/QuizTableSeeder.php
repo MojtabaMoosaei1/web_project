@@ -12,12 +12,13 @@ class QuizTableSeeder extends Seeder
      */
     public function run(): void
     {
-        
+
         Quiz::create([
             "title" => "درس مبانی هوش محاسباتی",
             "question_count" => 10,
             "score" => 10,
             "time_limit" => 50,
+            'type' =>'trueFalse'
         ]);
     }
 }
