@@ -33,26 +33,16 @@ class DashboardController extends Controller
 
     public function store(Request $request)
     {
-        // dd(request()->all());
-        $messages =
-        [
-            'title.required' => 'فیلد عنوان اجباری است ',
-            'title.max' => 'طول عنوان باید کمتر از 150 کارکتر باشد',
-            'count.required' => 'تعداد سوالات اجباری است ',
-            'count.max' => 'تعداد سوالات بیشتر از 200 تا نمیتواند باشد',
-
-        ];
 
 
         if(request()->input('type_quize') =='multipleChoice')
         {
             $data = request()->validate([
-                'title' => 'required|max:150|regex:/^[آ-یa-zA-Z\s]+$/u|',
-                'count' => 'required|numeric|max:200',
+                'title' => 'required|max:150|regex:/^[آ-یa-zA-Z\s]+[0-9]*$/u',                'count' => 'required|numeric|max:200',
                 'min' => 'required|min:1|max:240|numeric',
                 'score' => 'required|min:1|numeric',
                 'type_quize' => 'required|in:multipleChoice,trueFalse,descriptive',
-                'questions.*.text' => 'required|regex:/^[آ-یa-zA-Z\s]+$/u',
+                'questions.*.text' => 'required|regex:/^[آ-یa-zA-Z\s?؟]+[0-9]*$/um',
                 'questions.*.options' => 'required|array',
                 'questions.*.options.*' => 'required',
                 'questions.*.correct_option' => 'required|numeric|in:1,2,3,4'
@@ -62,6 +52,7 @@ class DashboardController extends Controller
                 'question_count' => $data['count'],
                 'score' => $data['score'],
                 'time_limit' => $data['min'],
+                'type'=>$data['type_quize'],
             ]);
             foreach($data['questions'] as $questionData)
             {
@@ -79,12 +70,12 @@ class DashboardController extends Controller
         {
             // dd($request->all());
             $data = request()->validate([
-                'title' => 'required|max:150|regex:/^[آ-یa-zA-Z\s]+$/u',
+                'title' => 'required|max:150|regex:/^[آ-یa-zA-Z\s]+[0-9]*$/u',
                 'count' => 'required|numeric|max:200',
                 'min' => 'required|min:1|max:240|numeric',
                 'score' => 'required|min:1|string',
                 'type_quize' => 'required|in:multipleChoice,trueFalse,descriptive',
-                'questions.*.text' => 'required|regex:/^[آ-یa-zA-Z\s]+$/u',
+                'questions.*.text' => 'required|regex:/^[آ-یa-zA-Z\s?؟]+[0-9]*$/um',
                 'questions.*.correct_option' => 'required|string',
             ]);
 
@@ -93,6 +84,7 @@ class DashboardController extends Controller
                 'question_count' => $data['count'],
                 'score' => $data['score'],
                 'time_limit' => $data['min'],
+                'type'=>$data['type_quize'],
             ]);
 
             foreach($data['questions'] as $questionData)
@@ -107,21 +99,28 @@ class DashboardController extends Controller
             }
         }
 
-
-
-
-
-
        return redirect()->route('Dashboard');
     }
+
     public function deleted(Request $request)
     {
-        // dd(Quiz::find($request->input(15)));
+        // dd(Quiz::find($request));
         if(Quiz::find($request->input('quiz_id')) != null )
         {
-            $quiz = Quiz::find($request->input('quiz_id'));
-            $quiz->delete();
-            return redirect()->Route('Dashboard');
+            $quize = Quiz::find($request->input('quiz_id'));
+            $type_quize = $quize->getAttribute('type');
+            if( $type_quize == "multipleChoice")
+            {
+                $id_multiplechoice =Multiplequestion::where('quize_id' ,$request->input('quiz_id'));
+                $id_multiplechoice->delete();
+            }
+            if( $type_quize == "trueFalse")
+            {
+                $id_truefalse = Truefalsequestion::where('quize_id' ,$request->input('quiz_id') );
+                $id_truefalse->delete();
+            }
+            $id_quize = Quiz::where('id' ,$request->input('quiz_id') );;
+            $id_quize->delete();
         }
         return redirect()->Route('Dashboard');
 
