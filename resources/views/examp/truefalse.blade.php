@@ -2,7 +2,6 @@
 @section('contents')
     <h1>سوالات درس {{$title_quize}}</h1>
     <div class="time_quize">زمان کل آزمون: {{$time_quize }} دقیقه</div>
-    {{-- <div class="time_quize" id="timer">00:00:00</div> --}}
     @foreach ($truefalsequestions as $index => $truefalsequestion)
 
         <span>
@@ -24,6 +23,5 @@
 
         @endforeach
     <button type="submit">ارسال پاسخ</button>
-    {{-- <script src="{{ asset('js/timer.js') }}"></script> --}}
 
 @endsection
