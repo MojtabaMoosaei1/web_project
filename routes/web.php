@@ -13,16 +13,15 @@ Route::get('/test', function () {
 });
 
 
-//میدل ور هارو بهتر درک کنی
-//قالب قسمت ساخت کوویز
-
-
+Route::get('/home', [UserController::class , 'index'])->name('home');
 Route::post('/register', [AuthController::class, 'register']);
-
+Route::post('/login', [AuthController::class, 'login']);
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware(EnsureUserIsLoggedIn::class);
 
 Route::prefix('/Panel')->group(function () {
     Route::get('/', [ExamController::class , 'index'])->name('Panel')->middleware(EnsureUserIsLoggedIn::class);
     Route::get('/history', [ExamController::class , 'history'])->middleware(EnsureUserIsLoggedIn::class);
+    Route::get('/show_examp/{id}', [ExamController::class, 'show_examp']);
 });
 
 Route::get('/Dashboard', [DashboardController::class , 'index'])->name('Dashboard')->middleware(EnsureUserIsLoggedIn::class);
@@ -30,19 +29,6 @@ Route::get('Dashboard/user', [DashboardController::class , 'user'])->name('Dashb
 Route::get('Dashboard/create', [DashboardController::class , 'create'])->name('Dashboard.create')->middleware(EnsureUserIsLoggedIn::class);
 Route::post('Dashboard/store', [DashboardController::class, 'store'])->middleware(EnsureUserIsLoggedIn::class);;
 Route::get('Dashboard/deleted', [DashboardController::class , 'deleted'])->name('Dashboard.deleted')->middleware(EnsureUserIsLoggedIn::class);
-
-
-
-
-
-Route::post('/login', [AuthController::class, 'login']);
-
-
-Route::get('/home', [UserController::class , 'index'])->name('home');
-
-
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware(EnsureUserIsLoggedIn::class);
-
 
 
 

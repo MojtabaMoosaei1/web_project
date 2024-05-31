@@ -1,0 +1,69 @@
+
+*{
+    direction: rtl;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+body {
+    margin: 20px;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 15px 0 15px 0;
+    width: 97%;
+
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    float: right;
+}
+
+input {
+
+    float: right;
+    margin-right: 5px;
+}
+
+button {
+    background-color: orange;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.number_question
+{
+    font-size: larger;
+    font-weight: bolder;
+    display: inline;
+}
+.question
+{
+    display: inline;
+    font-size: medium;
+}
+.time_quize
+{
+    text-align: left;
+    color: mediumvioletred;
+}
+

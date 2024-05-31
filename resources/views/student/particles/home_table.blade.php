@@ -20,7 +20,7 @@
                 <td>{{$quize->score}}</td>
                 <td>{{$quize->time_limit}}</td>
                 <td>
-                    <a href="https://google.com" class="start-btn" >
+                    <a href="{{ url('Panel/show_examp' , ['id' => $quize->id]) }}" class="start-btn" >
                         <i class="fa fa-external-link"></i>  شروع
                     </a>
                 </td>
