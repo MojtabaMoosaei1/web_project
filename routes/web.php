@@ -9,7 +9,7 @@ use App\Http\Middleware\EnsureUserIsLoggedIn;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/test', function () {
-    return view('welcome');
+    return view('examp.truefalse');
 });
 
 

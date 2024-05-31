@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نمایش سوال با گزینه‌ها</title>
-    <link rel="stylesheet" href="{{ asset('css/showexamp_page.css')}}">
-</head>
-<body>
+@extends('examp.layouts.masrer')
+@section('contents')
     <h1>سوالات درس {{$title_quize}}</h1>
     <div class="time_quize">زمان کل آزمون: {{$time_quize }} دقیقه</div>
     {{-- <div class="time_quize" id="timer">00:00:00</div> --}}
@@ -35,6 +28,4 @@
     <button type="submit">ارسال پاسخ</button>
     {{-- <script src="{{ asset('js/timer.js') }}"></script> --}}
 
-
-</body>
-</html>
+@endsection
