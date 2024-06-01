@@ -58,7 +58,7 @@
         </li>
         <li>
             <a href="{{ url('/Dashboard/create') }}">
-                <i class="fas fa-trophy"></i>کوویز جدید
+                <i class="fas fa-clipboard-list"></i> کوویز جدید
             </a>
 
         </li>

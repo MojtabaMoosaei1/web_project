@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="modal-body">
-            <form class="form-model" action="{{ url('login') }}" method="post">
+            <form class="form-model" action="{{ url('/login/admin') }}" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="karbariname"></label>

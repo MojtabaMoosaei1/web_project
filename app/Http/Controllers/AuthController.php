@@ -31,20 +31,31 @@ class AuthController extends Controller
         return redirect()->route('Panel');
     }
 
-    public function login(Request $request)
+    public function login_student(Request $request)
     {
 
         $credentials = request()->only('email', 'password');
-//        dd(Auth::guard('admin')->attempt($credentials));
+        if (Auth::guard('web')->attempt($credentials))
+        {
+            $user = User::where('email' , $request->input('email'))->first() ;
+            $name_user = $user->name ;
+            return redirect()->route('Panel' , ['name' => $name_user]);
+        }
+
+        return back()->withErrors([
+            'login' => 'اطلاعات وارد شده درست نمیباشد',
+        ]);
+
+    }
+
+    public function login_admin(Request $request)
+    {
+
+        $credentials = request()->only('email', 'password');
         if (Auth::guard('admin')->attempt($credentials))
         {
             return redirect()->intended('Dashboard');
         }
-        elseif (Auth::guard('web')->attempt($credentials))
-        {
-            return redirect()->intended('Panel');
-        }
-
         return back()->withErrors([
             'login' => 'اطلاعات وارد شده درست نمیباشد',
         ]);
