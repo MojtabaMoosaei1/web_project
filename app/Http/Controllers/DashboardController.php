@@ -124,8 +124,6 @@ class DashboardController extends Controller
                     'quize_id' => $quize->id,
                     'title_questions' => $questionData['text'],
                     'type'=>$data['type_quize'],
-                    'questions.*.text' => 'required|regex:/^[آ-یa-zA-Z\s?؟]+[0-9]*$/um',
-
                 ]);
             }
 

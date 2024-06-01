@@ -16,7 +16,7 @@
                 </span>
                 <span class="header-name-account">
                         <i class="fas fa-user" style="color: orange; padding-right: 60rem;"></i>
-                        <span class="hello-account" >سلام :کاربر تست </span>
+                        <span class="hello-account" >سلام: {{$name}}</span>
                         <span class="sign-out">
                             <i class="fas fa-sign-out-alt"></i>
                             <a href="{{route('logout')}}" class="logout">خروج</a>

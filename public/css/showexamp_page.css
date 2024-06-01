@@ -16,11 +16,11 @@ h1 {
 
 form {
     background-color: #fff;
-    padding: 20px;
+    padding: 25px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 15px 0 15px 0;
-    width: 97%;
+    margin: 15px 17% 15px 0;
+    width: 70%;
 
 }
 
@@ -29,13 +29,6 @@ label {
     margin-bottom: 10px;
     float: right;
 }
-
-input {
-
-    float: right;
-    margin-right: 5px;
-}
-
 button {
     background-color: orange;
     color: #fff;
@@ -44,6 +37,8 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 50%;
+    margin: 2% 28% 2% 0;
 }
 
 button:hover {
@@ -55,15 +50,40 @@ button:hover {
     font-size: larger;
     font-weight: bolder;
     display: inline;
+    margin-right: 45%;
 }
 .question
 {
     display: inline;
     font-size: medium;
+    text-align: center;
 }
 .time_quize
 {
     text-align: left;
     color: mediumvioletred;
+}
+
+
+.input {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 15px 0 15px 0;
+    width: 95%;
+
+}
+
+.div_input
+{
+    float: right;
+    margin-right: 5px;
+}
+
+.div_input_true
+{
+    float: right;
+    margin-right: 26%;
 }
 
